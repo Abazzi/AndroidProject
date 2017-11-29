@@ -3,6 +3,20 @@ The app will be able too purchase desserts from the bakery.
 The user will be able too create a custom cake that can be sent to the bakery
 to make.
 
+## App colours
+Red - #ffb3ba
+
+Orange - #ffdfba
+
+Yellow - ffffba
+
+Green - #baffc9
+
+Blue - #bae1ff
+
+Purple - #dbc3dd
+
+
 ## Git Config Instructions
 `git config --global user.name` `<<<YOUR NAME HERE>>>`
 
