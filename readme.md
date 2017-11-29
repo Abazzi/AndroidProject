@@ -8,7 +8,7 @@ Red - #ffb3ba
 
 Orange - #ffdfba
 
-Yellow - ffffba
+Yellow - #fffba
 
 Green - #baffc9
 
