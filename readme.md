@@ -16,6 +16,7 @@ Blue - #bae1ff
 
 Purple - #dbc3dd
 
+White - #fffff5
 
 ## Git Config Instructions
 `git config --global user.name` `<<<YOUR NAME HERE>>>`
