@@ -63,3 +63,9 @@ Go to GitHub and perform a pull request (possibly tag a group member to get it d
 Document everything you do with JavaDoc Comments
 
 With each commit comment the issue it is addressing `git commit -m "#4 this addresses isssue number 4"`
+
+
+## Rough Draft for App
+![alt text](https://user-images.githubusercontent.com/8884041/33664353-4d05b1c2-da61-11e7-88ec-7023001d7f08.png)
+![alt text](https://user-images.githubusercontent.com/8884041/33664354-4d116922-da61-11e7-8f90-bbb583483996.png)
+![alt text](https://user-images.githubusercontent.com/8884041/33664354-4d116922-da61-11e7-8f90-bbb583483996.png)
