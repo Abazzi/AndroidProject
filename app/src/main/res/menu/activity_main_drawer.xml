@@ -3,21 +3,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/custom_cake"
+            android:icon="@drawable/ic_cake_black_24dp"
+            android:title="Create A Cake" />
+        <item
+            android:id="@+id/premade_dessert"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="Premade Dessert" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/about_us"
+            android:icon="@drawable/ic_menu_send"
+            android:title="About Us" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/cart"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="Cart" />
     </group>
 
     <item android:title="Communicate">
