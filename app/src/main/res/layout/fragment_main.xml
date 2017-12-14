@@ -1,40 +1,58 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:columnCount="2"
-    android:rowCount="2"
     android:layout_gravity="center"
+    android:background="@color/white"
+    android:columnCount="4"
+    android:rowCount="2"
     tools:context="com.example.adambazzi.drurylane.MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:lauyout_row="0"
-        android:layout_gravity="center|end"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
+        android:id="@+id/cake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:lauyout_row="1"
-        android:layout_gravity="center"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/button"
+        android:text="Cake"
+        android:textColor="@color/white" />
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
+        android:id="@+id/donuts"
+        android:textColor="@color/white"
+        android:background="@drawable/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:lauyout_row="0"
-        android:layout_gravity="center"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/cake"
+        android:layout_marginEnd="64dp"
+        android:text="Donuts" />
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
+        android:id="@+id/tarts"
+        android:textColor="@color/white"
+        android:background="@drawable/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:lauyout_row="1"
-        android:layout_gravity="center"/>
-</GridLayout>
+        android:layout_alignStart="@+id/cake"
+        android:layout_below="@+id/cake"
+        android:layout_marginTop="64dp"
+        android:text="Tarts" />
+
+    <Button
+        android:id="@+id/pie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tarts"
+        android:layout_alignBottom="@+id/tarts"
+        android:layout_alignStart="@+id/donuts"
+        android:background="@drawable/button"
+        android:text="Pie"
+        android:textColor="@color/white" />
+</RelativeLayout>
