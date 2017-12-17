@@ -114,10 +114,10 @@ public class premadeMenu extends Fragment {
 
         ArrayList<dessertPage>  cakeTypeList = new ArrayList<dessertPage>();
         cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet cake, Overhyped Chocolate cake", addToCart));
+        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Basically Chocolate cake", addToCart));
+        cakeTypeList.add(new dessertPage("White Cake", "Rich people vanilla cake", addToCart));
 
         ArrayAdapter adapter =  new ArrayAdapter(getContext(),
                 android.R.layout.simple_list_item_1, cakeTypeList);
