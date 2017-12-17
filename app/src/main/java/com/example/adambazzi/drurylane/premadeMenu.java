@@ -7,6 +7,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.adambazzi.drurylane.JavaBeans.dessertPage;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +35,10 @@ public class premadeMenu extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView dessertDescription;
+    ListView list;
+    Button addToCart;
 
     private OnFragmentInteractionListener mListener;
 
@@ -60,11 +73,65 @@ public class premadeMenu extends Fragment {
         }
     }
 
+    public class CustomAdapter extends ArrayAdapter<dessertPage>{
+
+        //Create a construct that only requires context and the arraylist
+        public CustomAdapter(Context context, ArrayList<dessertPage> items){
+            //give ArrayAdapter class the context, no view and the list of items
+            super(context, 0, items);
+        }
+        //We override the getView method so that we can provide our own view
+        //for each item in the list
+        public View getView(int position, View convertView,  ViewGroup parent) {
+            //we do this by checking if the item already has a view
+            //and if it does not we provide it with one
+            if(convertView == null){
+                //providing the view
+                convertView =
+                        LayoutInflater.from(
+                                getContext()).inflate(R.layout.item_view, parent, false);
+            }
+            //We can then access each item in item_view.xml by using converView.findViewById()
+            TextView name = (TextView) convertView.findViewById(R.id.name);
+            //we can also use getItem() to access each item in the ListView
+            dessertPage item = getItem(position);
+
+            name.setText(item.getName());
+
+            return convertView;
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_premade_menu, container, false);
+        View view = inflater.inflate(R.layout.fragment_premade_menu, container, false);
+
+        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
+
+        list = (ListView) view.findViewById(R.id.premadeDessertListView);
+
+        ArrayList<dessertPage>  cakeTypeList = new ArrayList<dessertPage>();
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
+
+        ArrayAdapter adapter =  new ArrayAdapter(getContext(),
+                android.R.layout.simple_list_item_1, cakeTypeList);
+        CustomAdapter adapter1 = new CustomAdapter(getContext(),cakeTypeList);
+        list.setAdapter(adapter1);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
+                dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

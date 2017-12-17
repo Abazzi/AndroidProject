@@ -30,10 +30,10 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button cake;
-    Button cookies;
-    Button pie;
-    Button donuts;
+   public Button cake;
+   public Button cookies;
+   public Button pie;
+   public Button donuts;
 
     FragmentManager fm;
 
