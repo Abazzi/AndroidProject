@@ -76,7 +76,7 @@ public class AboutFragment extends Fragment {
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_INSERT);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
                 intent.putExtra(ContactsContract.Intents.Insert.PHONE, "519 379 5263");
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
