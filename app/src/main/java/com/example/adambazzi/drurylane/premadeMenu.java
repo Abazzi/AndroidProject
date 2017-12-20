@@ -103,23 +103,25 @@ public class premadeMenu extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_premade_menu, container, false);
+        list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
+        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
 
         if (mParam1 != null){
            System.out.println(mParam1.get(1));
+            ArrayAdapter adapter =  new ArrayAdapter(getContext(),
+                    android.R.layout.simple_list_item_1, mParam1);
+            CustomAdapter adapter1 = new CustomAdapter(getContext(),mParam1);
+            list.setAdapter(adapter);
+
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
+                    dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
+                }
+            });
         }
 
-        ArrayAdapter adapter =  new ArrayAdapter(getContext(),
-                android.R.layout.simple_list_item_1, mParam1);
-        CustomAdapter adapter1 = new CustomAdapter(getContext(),mParam1);
-        list.setAdapter(adapter1);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
-                dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
-            }
-        });
 
         return view;
     }
