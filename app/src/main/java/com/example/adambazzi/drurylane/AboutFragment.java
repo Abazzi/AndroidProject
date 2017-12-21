@@ -4,12 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 
 /**
@@ -19,8 +26,13 @@ import android.widget.Button;
  * to handle interaction events.
  * Use the {@link AboutFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ *
  */
-public class AboutFragment extends Fragment {
+
+
+
+public class AboutFragment extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,6 +44,8 @@ public class AboutFragment extends Fragment {
     String url = "https://www.drurylaneapp.com/";
 
     private OnFragmentInteractionListener mListener;
+
+    GoogleMap gMap;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -55,14 +69,19 @@ public class AboutFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            super.onCreate(savedInstanceState);
         }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,8 +96,7 @@ public class AboutFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
-                intent.putExtra(ContactsContract.Intents.Insert.PHONE, "519 379 5263");
+                intent.setData(Uri.parse("tel:" + 3795263));
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(intent);
                 }
@@ -97,7 +115,18 @@ public class AboutFragment extends Fragment {
         });
 
 
+
+
         return view;
+
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -123,6 +152,19 @@ public class AboutFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        gMap = googleMap;
+
+        LatLng location = new LatLng(43.333599, -79.790842);
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(location).title("Drury Lane");
+        gMap.addMarker(marker);
+        gMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this
