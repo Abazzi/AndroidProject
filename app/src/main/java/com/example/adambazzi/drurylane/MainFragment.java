@@ -10,6 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.adambazzi.drurylane.JavaBeans.dessertPage;
+
+import java.util.ArrayList;
 
 
 /**
@@ -34,6 +40,11 @@ public class MainFragment extends Fragment {
    public Button cookies;
    public Button pie;
    public Button donuts;
+   public Button addToCart;
+
+
+    TextView dessertDescription;
+    ListView list;
 
     FragmentManager fm;
 
@@ -75,6 +86,43 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+
+        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
+
+        list = (ListView) view.findViewById(R.id.premadeDessertListView);
+
+        final ArrayList<dessertPage> cakeTypeList = new ArrayList<dessertPage>();
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Vanilla Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Pound Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Blue cake", "Its blue cake", 4,addToCart));
+
+        final ArrayList<dessertPage>  donutTypeList= new ArrayList<dessertPage>();
+        donutTypeList.add(new dessertPage("Chocolate", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        donutTypeList.add(new dessertPage("Sprinkle", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        donutTypeList.add(new dessertPage("Double Chocolate", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        donutTypeList.add(new dessertPage("Original Glazed", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        donutTypeList.add(new dessertPage("Apple Fritter", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        donutTypeList.add(new dessertPage("Cheesecake", "Its blue cake", 4,addToCart));
+
+        final ArrayList<dessertPage>  pieTypeList = new ArrayList<dessertPage>();
+        pieTypeList.add(new dessertPage("Apple Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        pieTypeList.add(new dessertPage("Pumpkin Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        pieTypeList.add(new dessertPage("Cherry Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        pieTypeList.add(new dessertPage("Blueberry Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        pieTypeList.add(new dessertPage("Strawberry Rubarb", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        pieTypeList.add(new dessertPage("Key Lime Pie", "Its blue cake", 4,addToCart));
+
+        final ArrayList<dessertPage>  cookieTypeList = new ArrayList<dessertPage>();
+        cookieTypeList.add(new dessertPage("Oatmeal rasin", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cookieTypeList.add(new dessertPage("Vanilla Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cookieTypeList.add(new dessertPage("Black Forrest Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cookieTypeList.add(new dessertPage("Red Velvet Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cookieTypeList.add(new dessertPage("Pound Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cookieTypeList.add(new dessertPage("Blue cake", "Its blue cake", 4,addToCart));
+
         fm = getActivity().getSupportFragmentManager();
 
         cake = (Button) view.findViewById(R.id.cake);
@@ -86,7 +134,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
+                transaction.replace(R.id.content, premadeMenu.newInstance(cakeTypeList));
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -97,7 +145,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
+                transaction.replace(R.id.content, premadeMenu.newInstance(pieTypeList));
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -108,7 +156,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
+                transaction.replace(R.id.content,  premadeMenu.newInstance(cookieTypeList));
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -119,7 +167,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
+                transaction.replace(R.id.content, premadeMenu.newInstance(donutTypeList));
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

@@ -30,11 +30,9 @@ public class premadeMenu extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ArrayList<dessertPage> mParam1;
 
     TextView dessertDescription;
     ListView list;
@@ -51,15 +49,13 @@ public class premadeMenu extends Fragment {
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment premadeMenu.
      */
     // TODO: Rename and change types and number of parameters
-    public static premadeMenu newInstance(String param1, String param2) {
+    public static premadeMenu newInstance(ArrayList<dessertPage> param1) {
         premadeMenu fragment = new premadeMenu();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putSerializable(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,8 +64,8 @@ public class premadeMenu extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam1 = (ArrayList<dessertPage>) getArguments().getSerializable(ARG_PARAM1);
+
         }
     }
 
@@ -107,17 +103,25 @@ public class premadeMenu extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_premade_menu, container, false);
+        list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
         dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
 
-        list = (ListView) view.findViewById(R.id.premadeDessertListView);
+        if (mParam1 != null){
+           System.out.println(mParam1.get(1));
+            ArrayAdapter adapter =  new ArrayAdapter(getContext(),
+                    android.R.layout.simple_list_item_1, mParam1);
+            CustomAdapter adapter1 = new CustomAdapter(getContext(),mParam1);
+            list.setAdapter(adapter);
 
-        ArrayList<dessertPage>  cakeTypeList = new ArrayList<dessertPage>();
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, avaliable multiple versions", addToCart));
-        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet cake, Overhyped Chocolate cake", addToCart));
-        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Basically Chocolate cake", addToCart));
-        cakeTypeList.add(new dessertPage("White Cake", "Rich people vanilla cake", addToCart));
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
+                    dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
+                }
+            });
+        }
+
 
         ArrayAdapter adapter =  new ArrayAdapter(getContext(),
                 android.R.layout.simple_list_item_1, cakeTypeList);
