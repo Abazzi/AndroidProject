@@ -119,7 +119,7 @@ public class MainFragment extends Fragment {
         cookieTypeList.add(new dessertPage("Oatmeal rasin", "Oatmeal Rasin Cookie, the best kind",4, addToCart));
         cookieTypeList.add(new dessertPage("Chocolate Chip ", "Chocolate chip cookies ",4, addToCart));
         cookieTypeList.add(new dessertPage("Gingerbread Cookie", "Great for the holidays",4, addToCart));
-        cookieTypeList.add(new dessertPage("Snickerdoodle", "I don't eve know but they sound good",4, addToCart));
+        cookieTypeList.add(new dessertPage("Snickerdoodle", "I don't even know but they sound good",4, addToCart));
 
         fm = getActivity().getSupportFragmentManager();
 
