@@ -93,35 +93,33 @@ public class MainFragment extends Fragment {
 
         final ArrayList<dessertPage> cakeTypeList = new ArrayList<dessertPage>();
         cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Vanilla Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Pound Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Blue cake", "Its blue cake", 4,addToCart));
+        cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, Basic",4, addToCart));
+        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Black Forrest Cake",4, addToCart));
+        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet Cake",4, addToCart));
+        cakeTypeList.add(new dessertPage("Pound Cake", "Pound Cake",4, addToCart));
+        cakeTypeList.add(new dessertPage("Blue cake", "Blue Cake lol", 4,addToCart));
 
         final ArrayList<dessertPage>  donutTypeList= new ArrayList<dessertPage>();
-        donutTypeList.add(new dessertPage("Chocolate", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        donutTypeList.add(new dessertPage("Sprinkle", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        donutTypeList.add(new dessertPage("Double Chocolate", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        donutTypeList.add(new dessertPage("Original Glazed", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        donutTypeList.add(new dessertPage("Apple Fritter", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        donutTypeList.add(new dessertPage("Cheesecake", "Its blue cake", 4,addToCart));
+        donutTypeList.add(new dessertPage("Chocolate", "Chocolate Dipped Donut",1, addToCart));
+        donutTypeList.add(new dessertPage("Sprinkle", "Vanilla Dip Donut with Sprinkles",1, addToCart));
+        donutTypeList.add(new dessertPage("Double Chocolate", "Chocolate Donut with Chocolate Dips",1, addToCart));
+        donutTypeList.add(new dessertPage("Original Glazed", "Plain Donut dipped in Glaze",1, addToCart));
+        donutTypeList.add(new dessertPage("Apple Fritter", "Apple Cinammon stuffed donut",2, addToCart));
+        donutTypeList.add(new dessertPage("Cheesecake", "Vanilla Donut stuffed with cheesecake filling", 3,addToCart));
 
         final ArrayList<dessertPage>  pieTypeList = new ArrayList<dessertPage>();
-        pieTypeList.add(new dessertPage("Apple Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        pieTypeList.add(new dessertPage("Pumpkin Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        pieTypeList.add(new dessertPage("Cherry Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        pieTypeList.add(new dessertPage("Blueberry Pie", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        pieTypeList.add(new dessertPage("Strawberry Rubarb", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        pieTypeList.add(new dessertPage("Key Lime Pie", "Its blue cake", 4,addToCart));
+        pieTypeList.add(new dessertPage("Apple Pie", "Apple Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Pumpkin Pie", "Pumpkin Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Cherry Pie", "Cherry Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Blueberry Pie", "Blueberry Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Strawberry Rubarb", "Strawberry Rubarb Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Key Lime Pie", "Key lime pie", 4,addToCart));
 
         final ArrayList<dessertPage>  cookieTypeList = new ArrayList<dessertPage>();
-        cookieTypeList.add(new dessertPage("Oatmeal rasin", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cookieTypeList.add(new dessertPage("Vanilla Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cookieTypeList.add(new dessertPage("Black Forrest Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cookieTypeList.add(new dessertPage("Red Velvet Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cookieTypeList.add(new dessertPage("Pound Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
-        cookieTypeList.add(new dessertPage("Blue cake", "Its blue cake", 4,addToCart));
+        cookieTypeList.add(new dessertPage("Oatmeal rasin", "Oatmeal Rasin Cookie, the best kind",4, addToCart));
+        cookieTypeList.add(new dessertPage("Chocolate Chip ", "Chocolate chip cookies ",4, addToCart));
+        cookieTypeList.add(new dessertPage("Gingerbread Cookie", "Great for the holidays",4, addToCart));
+        cookieTypeList.add(new dessertPage("Snickerdoodle", "I don't eve know but they sound good",4, addToCart));
 
         fm = getActivity().getSupportFragmentManager();
 

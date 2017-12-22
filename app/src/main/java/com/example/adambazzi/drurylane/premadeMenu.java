@@ -124,8 +124,8 @@ public class premadeMenu extends Fragment {
 
 
         ArrayAdapter adapter =  new ArrayAdapter(getContext(),
-                android.R.layout.simple_list_item_1, cakeTypeList);
-        CustomAdapter adapter1 = new CustomAdapter(getContext(),cakeTypeList);
+                android.R.layout.simple_list_item_1, mParam1);
+        CustomAdapter adapter1 = new CustomAdapter(getContext(),mParam1);
         list.setAdapter(adapter1);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
