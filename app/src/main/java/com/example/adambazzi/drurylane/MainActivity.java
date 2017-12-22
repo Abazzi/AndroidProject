@@ -15,10 +15,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-                    MainFragment.OnFragmentInteractionListener{
+                    MainFragment.OnFragmentInteractionListener,
+                    createCakeFragment.OnFragmentInteractionListener{
     FragmentManager fm;
 
     @Override
@@ -96,6 +100,9 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = fm.beginTransaction();
         if (id == R.id.custom_cake) {
             // Handle the camera action
+            transaction.replace(R.id.content, new createCakeFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.premade_dessert) {
             transaction.replace(R.id.content,new MainFragment());
             transaction.addToBackStack(null);
@@ -115,4 +122,57 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+//    public void onRadioButtonClicked(View v) {
+//        Toast.makeText(getApplicationContext(),"Test method passed",Toast.LENGTH_SHORT).show();
+
+//        ImageView cupCakeImage = (ImageView) v.findViewById(R.id.cupCakeImage);
+//        Toast.makeText(getApplicationContext(),"cupCakeImage: " + cupCakeImage,Toast.LENGTH_SHORT).show();
+
+        //now check which radio button is selected
+        //android switch statement
+//        switch(v.getId()){
+//
+//            case R.id.chocoloateCakeRadio:
+//                    cupCakeImage.setImageResource(R.drawable.orange_vanilla);
+//                break;
+//
+//            case R.id.vanillaCakeRadio:
+//                    cupCakeImage.setImageResource(R.drawable.vanillacake);
+//                break;
+//
+//            case R.id.orangeCakeRadio:
+//                    cupCakeImage.setImageResource(R.drawable.orangecake);
+//                break;
+//            case R.id.chocoIcingRadio:
+//                switch (v.getId()){
+//                    case R.id.chocoloateCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.choco_choco);
+//                        break;
+//                    case R.id.vanillaCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.vanilla_choco);
+//                        break;
+//                    case R.id.orangeCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.orange_choco);
+//                        break;
+//                }
+//                break;
+//
+//            case R.id.vanillaIcingRadio:
+//                switch (v.getId()){
+//                    case R.id.chocoloateCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.choco_vanilla);
+//                        break;
+//                    case R.id.vanillaCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.vanilla_vanilla);
+//                        break;
+//                    case R.id.orangeCakeRadio:
+//                            cupCakeImage.setImageResource(R.drawable.orange_vanilla);
+//                        break;
+//                }
+//                break;
+//        }
+
+//    }
+
 }
