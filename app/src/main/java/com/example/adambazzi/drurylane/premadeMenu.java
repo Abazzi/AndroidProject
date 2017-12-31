@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.adambazzi.drurylane.JavaBeans.dessertPage;
 
@@ -107,6 +108,8 @@ public class premadeMenu extends Fragment {
 
         dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
 
+        addToCart = (Button) view.findViewById(R.id.addToCartButton);
+
         if (mParam1 != null){
            System.out.println(mParam1.get(1));
             ArrayAdapter adapter =  new ArrayAdapter(getContext(),
@@ -134,6 +137,15 @@ public class premadeMenu extends Fragment {
                 dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
             }
         });
+
+//        addToCart.setOnClickListener( new AdapterView.OnItemClickListener(){
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+//                String item = String.valueOf(list.getItemAtPosition(position));
+//                Toast.makeText(premadeMenu,item,Toast.LENGTH_LONG).show();
+//            }
+//        });
+
 
         return view;
     }

@@ -92,7 +92,7 @@ public class MainFragment extends Fragment {
         list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
         final ArrayList<dessertPage> cakeTypeList = new ArrayList<dessertPage>();
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, avaliable multiple versions",4, addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, available multiple versions",4, addToCart));
         cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, Basic",4, addToCart));
         cakeTypeList.add(new dessertPage("Black Forrest Cake", "Black Forrest Cake",4, addToCart));
         cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet Cake",4, addToCart));
@@ -104,7 +104,7 @@ public class MainFragment extends Fragment {
         donutTypeList.add(new dessertPage("Sprinkle", "Vanilla Dip Donut with Sprinkles",1, addToCart));
         donutTypeList.add(new dessertPage("Double Chocolate", "Chocolate Donut with Chocolate Dips",1, addToCart));
         donutTypeList.add(new dessertPage("Original Glazed", "Plain Donut dipped in Glaze",1, addToCart));
-        donutTypeList.add(new dessertPage("Apple Fritter", "Apple Cinammon stuffed donut",2, addToCart));
+        donutTypeList.add(new dessertPage("Apple Fritter", "Apple Cinnamon stuffed donut",2, addToCart));
         donutTypeList.add(new dessertPage("Cheesecake", "Vanilla Donut stuffed with cheesecake filling", 3,addToCart));
 
         final ArrayList<dessertPage>  pieTypeList = new ArrayList<dessertPage>();
@@ -112,13 +112,13 @@ public class MainFragment extends Fragment {
         pieTypeList.add(new dessertPage("Pumpkin Pie", "Pumpkin Pie",4, addToCart));
         pieTypeList.add(new dessertPage("Cherry Pie", "Cherry Pie",4, addToCart));
         pieTypeList.add(new dessertPage("Blueberry Pie", "Blueberry Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Strawberry Rubarb", "Strawberry Rubarb Pie",4, addToCart));
+        pieTypeList.add(new dessertPage("Strawberry Rhubarb", "Strawberry Rhubarb Pie",4, addToCart));
         pieTypeList.add(new dessertPage("Key Lime Pie", "Key lime pie", 4,addToCart));
 
         final ArrayList<dessertPage>  cookieTypeList = new ArrayList<dessertPage>();
-        cookieTypeList.add(new dessertPage("Oatmeal rasin", "Oatmeal Rasin Cookie, the best kind",4, addToCart));
+        cookieTypeList.add(new dessertPage("Oatmeal Raisin", "Oatmeal Raisin Cookie, the best kind",4, addToCart));
         cookieTypeList.add(new dessertPage("Chocolate Chip ", "Chocolate chip cookies ",4, addToCart));
-        cookieTypeList.add(new dessertPage("Gingerbread Cookie", "Great for the holidays",4, addToCart));
+        cookieTypeList.add(new dessertPage("Gingerbread", "Great for the holidays",4, addToCart));
         cookieTypeList.add(new dessertPage("Snickerdoodle", "I don't even know but they sound good",4, addToCart));
 
         fm = getActivity().getSupportFragmentManager();

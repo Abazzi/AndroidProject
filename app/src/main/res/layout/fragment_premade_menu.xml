@@ -8,19 +8,22 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-   <ListView
-       android:id="@+id/premadeDessertListView"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_weight="1"></ListView>
+    <ListView
+        android:id="@+id/premadeDessertListView"
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:layout_weight="1"></ListView>
 
     <TextView
         android:id="@+id/premadeDessertDescriptoin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_width="197dp"
+        android:layout_height="189dp"
+        android:layout_weight="1"
+        android:textColor="@color/purple"
+        android:textSize="20sp" />
 
     <Button
+        android:id="@+id/addToCartButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add to Cart"
