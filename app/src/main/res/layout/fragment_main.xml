@@ -29,8 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/cake"
         android:layout_alignBottom="@+id/cake"
-        android:layout_marginStart="48dp"
-        android:layout_toEndOf="@+id/cake"
+        android:layout_alignStart="@+id/pie"
         android:background="@drawable/button"
         android:text="Donuts"
         android:textColor="@color/white" />
@@ -50,8 +49,10 @@
         android:id="@+id/pie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/donuts"
-        android:layout_centerVertical="true"
+        android:layout_alignBaseline="@+id/cookies"
+        android:layout_alignBottom="@+id/cookies"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="51dp"
         android:background="@drawable/button"
         android:text="Pie"
         android:textColor="@color/white" />

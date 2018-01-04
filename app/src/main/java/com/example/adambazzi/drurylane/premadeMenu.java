@@ -106,7 +106,7 @@ public class premadeMenu extends Fragment {
         View view = inflater.inflate(R.layout.fragment_premade_menu, container, false);
         list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
-        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
+        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescription);
 
         addToCart = (Button) view.findViewById(R.id.addToCartButton);
 

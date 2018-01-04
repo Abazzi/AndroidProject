@@ -12,13 +12,15 @@
         android:id="@+id/premadeDessertListView"
         android:layout_width="match_parent"
         android:layout_height="348dp"
+        android:listSelector="@color/blue"
         android:layout_weight="1"></ListView>
 
     <TextView
-        android:id="@+id/premadeDessertDescriptoin"
-        android:layout_width="197dp"
+        android:id="@+id/premadeDessertDescription"
+        android:layout_width="match_parent"
         android:layout_height="189dp"
         android:layout_weight="1"
+        android:textAlignment="center"
         android:textColor="@color/purple"
         android:textSize="20sp" />
 

@@ -87,7 +87,7 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
 
-        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescriptoin);
+        dessertDescription = (TextView) view.findViewById(R.id.premadeDessertDescription);
 
         list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
