@@ -138,13 +138,15 @@ public class premadeMenu extends Fragment {
             }
         });
 
-//        addToCart.setOnClickListener( new AdapterView.OnItemClickListener(){
+//        addToCart.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+//            public void onClick(View v) {
+//                int position = list.getPositionForView(v);
 //                String item = String.valueOf(list.getItemAtPosition(position));
-//                Toast.makeText(premadeMenu,item,Toast.LENGTH_LONG).show();
+//                Toast.makeText(premadeMenu.this,item,Toast.LENGTH_LONG).show();
 //            }
-//        });
+//        }
+//        );
 
 
         return view;
