@@ -12,8 +12,11 @@
         android:id="@+id/premadeDessertListView"
         android:layout_width="match_parent"
         android:layout_height="348dp"
-        android:listSelector="@color/blue"
-        android:layout_weight="1"></ListView>
+        android:layout_weight="1"
+        android:cacheColorHint="@color/purple"
+        android:entries="@drawable/donut_edit"
+        android:fadingEdge="horizontal"
+        android:listSelector="@color/blue"></ListView>
 
     <TextView
         android:id="@+id/premadeDessertDescription"
