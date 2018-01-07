@@ -4,23 +4,20 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MainFragment.OnFragmentInteractionListener} interface
+ * {@link premadeMenu.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MainFragment#newInstance} factory method to
+ * Use the {@link premadeMenu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFragment extends Fragment {
+public class premadeMenu extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,16 +27,9 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button cake;
-    Button cookies;
-    Button pie;
-    Button donuts;
-
-    FragmentManager fm;
-
     private OnFragmentInteractionListener mListener;
 
-    public MainFragment() {
+    public premadeMenu() {
         // Required empty public constructor
     }
 
@@ -49,11 +39,11 @@ public class MainFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
+     * @return A new instance of fragment premadeMenu.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
+    public static premadeMenu newInstance(String param1, String param2) {
+        premadeMenu fragment = new premadeMenu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,59 +63,8 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-
-        fm = getActivity().getSupportFragmentManager();
-
-        cake = (Button) view.findViewById(R.id.cake);
-        donuts = (Button) view.findViewById(R.id.donuts);
-        cookies = (Button) view.findViewById(R.id.cookies);
-        pie = (Button) view.findViewById(R.id.pie);
-
-        cake.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-
-        pie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-
-        cookies.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-
-        donuts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.content, new premadeMenu());
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_premade_menu, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
