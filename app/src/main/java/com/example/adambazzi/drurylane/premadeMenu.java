@@ -135,19 +135,15 @@ public class premadeMenu extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
                 dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
+                String position = list.getItemAtPosition(i).toString();
             }
         });
 
-//        addToCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                int position = list.getPositionForView(v);
-//                String item = String.valueOf(list.getItemAtPosition(position));
-//                Toast.makeText(premadeMenu.this,item,Toast.LENGTH_LONG).show();
-//            }
-//        }
-//        );
-
+        addToCart.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
         return view;
     }
