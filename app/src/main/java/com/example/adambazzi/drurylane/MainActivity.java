@@ -17,28 +17,29 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                     MainFragment.OnFragmentInteractionListener,
                     premadeMenu.OnFragmentInteractionListener,
-                    AboutFragment.OnFragmentInteractionListener{
-    FragmentManager fm;
+                    createCakeFragment.OnFragmentInteractionListener,
+                    AboutFragment.OnFragmentInteractionListener {
 
-    private static final String TAG = "MainActivity";
-    private static final int ERROR_DIALOG_REQUEST = 9001;
+        FragmentManager fm;
+
+        private static final String TAG = "MainActivity";
+        private static final int ERROR_DIALOG_REQUEST = 9001;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        @Override
+        protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       fm = getSupportFragmentManager();
+        fm = getSupportFragmentManager();
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(R.id.content, new MainFragment());
             transaction.commit();
         }
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -52,9 +53,8 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-    @Override
-    public void onBackPressed() {
+        @Override
+        public void onBackPressed () {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -63,15 +63,15 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+        @Override
+        public boolean onCreateOptionsMenu (Menu menu){
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+        @Override
+        public boolean onOptionsItemSelected (MenuItem item){
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -85,22 +85,24 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+        @SuppressWarnings("StatementWithEmptyBody")
+        @Override
+        public boolean onNavigationItemSelected (MenuItem item){
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         FragmentTransaction transaction = fm.beginTransaction();
         if (id == R.id.custom_cake) {
-            // Handle the camera action
+            transaction.replace(R.id.content, new createCakeFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.premade_dessert) {
-            transaction.replace(R.id.content,new MainFragment());
+            transaction.replace(R.id.content, new MainFragment());
             transaction.addToBackStack(null);
             transaction.commit();
         } else if (id == R.id.about_us) {
             FragmentManager fm = getSupportFragmentManager();
-            transaction.replace(R.id.content,new AboutFragment());
+            transaction.replace(R.id.content, new AboutFragment());
             transaction.addToBackStack(null);
             transaction.commit();
 
@@ -113,8 +115,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
+        @Override
+        public void onFragmentInteraction (Uri uri){
 
     }
 }
+
