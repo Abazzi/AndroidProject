@@ -91,8 +91,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        FragmentTransaction transaction = fm.beginTransaction();
-        if (id == R.id.custom_cake) {
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
+            if (id == R.id.custom_cake) {
             transaction.replace(R.id.content, new createCakeFragment());
             transaction.addToBackStack(null);
             transaction.commit();
