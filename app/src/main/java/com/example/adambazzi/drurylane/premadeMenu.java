@@ -1,6 +1,7 @@
 package com.example.adambazzi.drurylane;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ public class premadeMenu extends Fragment {
     TextView dessertDescription;
     ListView list;
     Button addToCart;
+    EditText quantity;
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,7 +69,6 @@ public class premadeMenu extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = (ArrayList<dessertPage>) getArguments().getSerializable(ARG_PARAM1);
-
         }
     }
 
@@ -110,6 +112,8 @@ public class premadeMenu extends Fragment {
 
         addToCart = (Button) view.findViewById(R.id.addToCartButton);
 
+        quantity = (EditText) view.findViewById(R.id.premadeNumber);
+
         if (mParam1 != null){
            System.out.println(mParam1.get(1));
             ArrayAdapter adapter =  new ArrayAdapter(getContext(),
@@ -142,6 +146,13 @@ public class premadeMenu extends Fragment {
         addToCart.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               Integer test  = Integer.parseInt(quantity.getText().toString());
+               String item = list.getSelectedItem().getClass().getName();
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","info@durylane.ca", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Your order is " + test +" "+ item );
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));
             }
         });
 

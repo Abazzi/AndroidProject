@@ -44,7 +44,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/preamadeNumber"
+            android:id="@+id/premadeNumber"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
