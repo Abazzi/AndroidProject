@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity
                     MainFragment.OnFragmentInteractionListener,
                     premadeMenu.OnFragmentInteractionListener,
                     createCakeFragment.OnFragmentInteractionListener,
-                    AboutFragment.OnFragmentInteractionListener {
+                    AboutFragment.OnFragmentInteractionListener,
+                    CreditsFragment.OnFragmentInteractionListener {
 
         FragmentManager fm;
 
@@ -106,7 +107,17 @@ public class MainActivity extends AppCompatActivity
             transaction.addToBackStack(null);
             transaction.commit();
 
-        } else if (id == R.id.cart) {
+        }
+
+        else if (id == R.id.credits) {
+            FragmentManager fm = getSupportFragmentManager();
+            transaction.replace(R.id.content, new CreditsFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
+
+        }
+
+        else if (id == R.id.cart) {
 
         }
 
