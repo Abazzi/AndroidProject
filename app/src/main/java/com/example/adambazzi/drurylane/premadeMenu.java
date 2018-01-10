@@ -42,6 +42,8 @@ public class premadeMenu extends Fragment {
     Button addToCart;
     EditText quantity;
 
+    dessertPage selectedItem;
+    String dessertType;
     private OnFragmentInteractionListener mListener;
 
     public premadeMenu() {
@@ -114,6 +116,7 @@ public class premadeMenu extends Fragment {
 
         quantity = (EditText) view.findViewById(R.id.premadeNumber);
 
+
         if (mParam1 != null){
            System.out.println(mParam1.get(1));
             ArrayAdapter adapter =  new ArrayAdapter(getContext(),
@@ -140,19 +143,36 @@ public class premadeMenu extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int  i, long id) {
                 dessertDescription.setText(((dessertPage)list.getItemAtPosition(i)).getDefinition());
                 String position = list.getItemAtPosition(i).toString();
+                selectedItem = (dessertPage) list.getItemAtPosition(i);
             }
         });
 
         addToCart.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Integer test  = Integer.parseInt(quantity.getText().toString());
-               String item = list.getSelectedItem().getClass().getName();
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto","info@durylane.ca", null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Your order is " + test +" "+ item );
-                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                if (selectedItem != null){
+                String emails[] = {"info@durylane.ca"};
+                    Integer test  = Integer.parseInt(quantity.getText().toString());
+                    String item = selectedItem.getName();
+//                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+//                            "mailto","info@durylane.ca", null));
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                    emailIntent.setData(Uri.parse("mailto:"));
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL,emails);
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
+                    String intentValue;
+                    if (test <2){
+                        intentValue = "Your order has " + test + " " + item;
+                    } else{
+                        intentValue = "Your order has "  + test + " " + item + "'s";
+                    }
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
+                    if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
+                        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                    }
+                }else{
+                    Toast.makeText(getContext(),"Select an item first", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
