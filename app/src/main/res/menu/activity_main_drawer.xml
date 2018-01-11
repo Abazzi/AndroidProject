@@ -14,10 +14,6 @@
             android:id="@+id/about_us"
             android:icon="@drawable/ic_menu_send"
             android:title="About Us" />
-        <item
-            android:id="@+id/cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
-            android:title="Cart" />
     </group>
 
     <item android:title="Communicate">
