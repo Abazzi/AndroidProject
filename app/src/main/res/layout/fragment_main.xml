@@ -13,47 +13,49 @@
 
     <Button
         android:id="@+id/cake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="66dp"
         android:layout_marginTop="116dp"
         android:background="@drawable/button"
-        android:text="Cake"
-        android:textColor="@color/white" />
+        android:text="@string/cake"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/donuts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cake"
-        android:layout_alignBottom="@+id/cake"
-        android:layout_alignStart="@+id/pie"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/cake"
+        android:layout_marginEnd="64dp"
         android:background="@drawable/button"
-        android:text="Donuts"
-        android:textColor="@color/white" />
+        android:text="@string/donuts"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/cookies"
-        android:textColor="@color/white"
-        android:background="@drawable/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_alignStart="@+id/cake"
         android:layout_below="@+id/cake"
         android:layout_marginTop="64dp"
-        android:text="Cookies" />
+        android:background="@drawable/button"
+        android:text="@string/cookies"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/pie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cookies"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_alignBottom="@+id/cookies"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="51dp"
+        android:layout_alignStart="@+id/donuts"
         android:background="@drawable/button"
-        android:text="Pie"
-        android:textColor="@color/white" />
+        android:text="@string/pie"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 </RelativeLayout>

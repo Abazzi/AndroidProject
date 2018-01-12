@@ -21,4 +21,8 @@
     <string name="todo">TODO</string>
     <string name="how_many">How many?</string>
     <string name="title_activity_maps">Map</string>
+    <string name="cake">CAKE</string>
+    <string name="cookies">COOKIES</string>
+    <string name="pie">PIE</string>
+    <string name="donuts">CAKE</string>
 </resources>
