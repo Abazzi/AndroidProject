@@ -154,21 +154,32 @@ public class premadeMenu extends Fragment {
                 String emails[] = {"info@durylane.ca"};
                     Integer test  = Integer.parseInt(quantity.getText().toString());
                     String item = selectedItem.getName();
+                    Integer price = selectedItem.getPrice();
 //                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 //                            "mailto","info@durylane.ca", null));
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                     emailIntent.setData(Uri.parse("mailto:"));
                     emailIntent.putExtra(Intent.EXTRA_EMAIL,emails);
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
+                    if (test == 0){
+                        Toast.makeText(getContext(),"Please enter a valid quantity",Toast.LENGTH_LONG).show();
+                    }
                     String intentValue;
                     if (test <2){
-                        intentValue = "Your order has " + test + " " + item;
-                    } else{
-                        intentValue = "Your order has "  + test + " " + item + "'s";
-                    }
-                    emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
-                    if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
-                        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                        intentValue = "Your order has " + test + " " + item + "for a total of " + "$" + price ;
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
+                        if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
+                            startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                        }
+                    } else if (test == 0){
+                        Toast.makeText(getContext(),"please enter a valid quantity",Toast.LENGTH_LONG).show();
+                    } else {
+                            intentValue = "Your order has "  + test + " " + item + "'s" + " for the total price of "
+                                    + "$" +price ;
+                            emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
+                            if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
+                                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                        }
                     }
                 }else{
                     Toast.makeText(getContext(),"Select an item first", Toast.LENGTH_LONG).show();
