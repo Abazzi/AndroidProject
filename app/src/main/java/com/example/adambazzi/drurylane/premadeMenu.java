@@ -157,6 +157,7 @@ public class premadeMenu extends Fragment {
 //                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 //                            "mailto","info@durylane.ca", null));
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                    emailIntent.setType("message/rfc822");
                     emailIntent.setData(Uri.parse("mailto:"));
                     emailIntent.putExtra(Intent.EXTRA_EMAIL,emails);
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
@@ -165,7 +166,7 @@ public class premadeMenu extends Fragment {
                     }
                     String intentValue;
                     if (test <2){
-                        intentValue = "Your order has " + test + " " + item + "for a total of " + "$" + price ;
+                        intentValue = "Your order has " + test + " " + item + "for a total of " + "$" + (price * test) ;
                         emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                         if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                             startActivity(Intent.createChooser(emailIntent, "Send email..."));
@@ -174,7 +175,7 @@ public class premadeMenu extends Fragment {
                         Toast.makeText(getContext(),"please enter a valid quantity",Toast.LENGTH_LONG).show();
                     } else {
                             intentValue = "Your order has "  + test + " " + item + "'s" + " for the total price of "
-                                    + "$" +price ;
+                                    + "$" +(price * test) ;
                             emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                             if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
