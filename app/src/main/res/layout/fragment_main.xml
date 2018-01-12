@@ -57,4 +57,8 @@
         android:text="@string/pie"
         android:textColor="@color/white"
         android:textSize="20sp" />
+<<<<<<< HEAD
 </ConstraintLayout>
+=======
+</RelativeLayout>
+>>>>>>> 6d0820379dfe67181ba90a65c780aca26b71154c

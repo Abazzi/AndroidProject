@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity
                     MainFragment.OnFragmentInteractionListener,
                     premadeMenu.OnFragmentInteractionListener,
                     createCakeFragment.OnFragmentInteractionListener,
-                    AboutFragment.OnFragmentInteractionListener {
+                    AboutFragment.OnFragmentInteractionListener,
+                    CreditsFragment.OnFragmentInteractionListener {
 
         FragmentManager fm;
 
@@ -91,8 +92,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        FragmentTransaction transaction = fm.beginTransaction();
-        if (id == R.id.custom_cake) {
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
+            if (id == R.id.custom_cake) {
             transaction.replace(R.id.content, new createCakeFragment());
             transaction.addToBackStack(null);
             transaction.commit();
@@ -106,7 +108,13 @@ public class MainActivity extends AppCompatActivity
             transaction.addToBackStack(null);
             transaction.commit();
 
-        } else if (id == R.id.cart) {
+        }
+
+        else if (id == R.id.credits) {
+            FragmentManager fm = getSupportFragmentManager();
+            transaction.replace(R.id.content, new CreditsFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
 
         }
 
