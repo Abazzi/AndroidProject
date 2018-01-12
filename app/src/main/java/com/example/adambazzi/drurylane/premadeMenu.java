@@ -151,7 +151,7 @@ public class premadeMenu extends Fragment {
             public void onClick(View view) {
                 if (selectedItem != null){
                 String emails[] = {"info@durylane.ca"};
-                    Integer test  = Integer.parseInt(quantity.getText().toString());
+                    Integer itemQuantity = Integer.parseInt(quantity.getText().toString());
                     String item = selectedItem.getName();
                     Integer price = selectedItem.getPrice();
 //                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -161,21 +161,21 @@ public class premadeMenu extends Fragment {
                     emailIntent.setData(Uri.parse("mailto:"));
                     emailIntent.putExtra(Intent.EXTRA_EMAIL,emails);
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order");
-                    if (test == 0){
+                    if (itemQuantity == 0){
                         Toast.makeText(getContext(),"Please enter a valid quantity",Toast.LENGTH_LONG).show();
                     }
                     String intentValue;
-                    if (test <2){
-                        intentValue = "Your order has " + test + " " + item + "for a total of " + "$" + (price * test) ;
+                    if (itemQuantity<2){
+                        intentValue = "Your order has " + itemQuantity+ " " + item + "for a total of " + "$" + (price * itemQuantity) ;
                         emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                         if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                             startActivity(Intent.createChooser(emailIntent, "Send email..."));
                         }
-                    } else if (test == 0){
+                    } else if (itemQuantity == 0){
                         Toast.makeText(getContext(),"please enter a valid quantity",Toast.LENGTH_LONG).show();
                     } else {
-                            intentValue = "Your order has "  + test + " " + item + "'s" + " for the total price of "
-                                    + "$" +(price * test) ;
+                            intentValue = "Your order has "  + itemQuantity+ " " + item + "'s" + " for the total price of "
+                                    + "$" +(price * itemQuantity) ;
                             emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                             if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
