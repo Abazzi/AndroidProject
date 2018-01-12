@@ -43,7 +43,6 @@ public class premadeMenu extends Fragment {
     EditText quantity;
 
     dessertPage selectedItem;
-    String dessertType;
     private OnFragmentInteractionListener mListener;
 
     public premadeMenu() {
