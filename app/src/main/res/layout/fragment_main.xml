@@ -1,11 +1,12 @@
-<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:background="@color/white"
     android:columnCount="4"
     android:rowCount="2"
-    tools:context="com.example.adambazzi.drurylane.MainFragment">
+    tools:context="com.example.adambazzi.drurylane.MainFragment"
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -57,8 +58,4 @@
         android:text="@string/pie"
         android:textColor="@color/white"
         android:textSize="20sp" />
-<<<<<<< HEAD
-</ConstraintLayout>
-=======
 </RelativeLayout>
->>>>>>> 6d0820379dfe67181ba90a65c780aca26b71154c
