@@ -7,9 +7,8 @@
     <!--android:rowCount="2"-->
     <!--tools:context="com.example.adambazzi.drurylane.MainFragment">-->
 
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/PLAY_PARENT"
     android:layout_width="match_parent"
@@ -63,7 +62,9 @@
         android:background="@drawable/button"
         android:text="@string/pie"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
 

@@ -92,34 +92,34 @@ public class MainFragment extends Fragment {
         list = (ListView) view.findViewById(R.id.premadeDessertListView);
 
         final ArrayList<dessertPage> cakeTypeList = new ArrayList<dessertPage>();
-        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, available multiple versions",4, addToCart));
-        cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, Basic",4, addToCart));
-        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Black Forrest Cake",4, addToCart));
-        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet Cake",4, addToCart));
-        cakeTypeList.add(new dessertPage("Pound Cake", "Pound Cake",4, addToCart));
-        cakeTypeList.add(new dessertPage("Blue cake", "Blue Cake lol", 4,addToCart));
+        cakeTypeList.add(new dessertPage("Chocolate Cake", "Chocolate cake, available multiple versions",4));
+        cakeTypeList.add(new dessertPage("Vanilla Cake", "Vanilla cake, Basic",4));
+        cakeTypeList.add(new dessertPage("Black Forrest Cake", "Black Forrest Cake",4));
+        cakeTypeList.add(new dessertPage("Red Velvet Cake", "Red Velvet Cake",4));
+        cakeTypeList.add(new dessertPage("Pound Cake", "Pound Cake",4));
+        cakeTypeList.add(new dessertPage("Blue cake", "Blue Cake lol",2 ));
 
         final ArrayList<dessertPage>  donutTypeList= new ArrayList<dessertPage>();
-        donutTypeList.add(new dessertPage("Chocolate Donut", "Chocolate Dipped Donut",1, addToCart));
-        donutTypeList.add(new dessertPage("Sprinkle Donut", "Vanilla Dip Donut with Sprinkles",1, addToCart));
-        donutTypeList.add(new dessertPage("Double Chocolate Donut", "Chocolate Donut with Chocolate Dips",1, addToCart));
-        donutTypeList.add(new dessertPage("Original Glazed Donut", "Plain Donut dipped in Glaze",1, addToCart));
-        donutTypeList.add(new dessertPage("Apple Fritter Donut", "Apple Cinnamon stuffed donut",2, addToCart));
-        donutTypeList.add(new dessertPage("Cheesecake Donut", "Vanilla Donut stuffed with cheesecake filling", 3,addToCart));
+        donutTypeList.add(new dessertPage("Chocolate Donut", "Chocolate Dipped Donut",1));
+        donutTypeList.add(new dessertPage("Sprinkle Donut", "Vanilla Dip Donut with Sprinkles",1));
+        donutTypeList.add(new dessertPage("Double Chocolate Donut", "Chocolate Donut with Chocolate Dips",1));
+        donutTypeList.add(new dessertPage("Original Glazed Donut", "Plain Donut dipped in Glaze",1));
+        donutTypeList.add(new dessertPage("Apple Fritter Donut", "Apple Cinnamon stuffed donut",2));
+        donutTypeList.add(new dessertPage("Cheesecake Donut", "Vanilla Donut stuffed with cheesecake filling",2 ));
 
         final ArrayList<dessertPage>  pieTypeList = new ArrayList<dessertPage>();
-        pieTypeList.add(new dessertPage("Apple Pie", "Apple Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Pumpkin Pie", "Pumpkin Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Cherry Pie", "Cherry Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Blueberry Pie", "Blueberry Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Strawberry Rhubarb", "Strawberry Rhubarb Pie",4, addToCart));
-        pieTypeList.add(new dessertPage("Key Lime Pie", "Key lime pie", 4,addToCart));
+        pieTypeList.add(new dessertPage("Apple Pie", "Apple Pie",4));
+        pieTypeList.add(new dessertPage("Pumpkin Pie", "Pumpkin Pie",4));
+        pieTypeList.add(new dessertPage("Cherry Pie", "Cherry Pie",4));
+        pieTypeList.add(new dessertPage("Blueberry Pie", "Blueberry Pie",4));
+        pieTypeList.add(new dessertPage("Strawberry Rhubarb", "Strawberry Rhubarb Pie",4));
+        pieTypeList.add(new dessertPage("Key Lime Pie", "Key lime pie", 6));
 
         final ArrayList<dessertPage>  cookieTypeList = new ArrayList<dessertPage>();
-        cookieTypeList.add(new dessertPage("Oatmeal Raisin Cookie", "Oatmeal Raisin Cookie, the best kind",4, addToCart));
-        cookieTypeList.add(new dessertPage("Chocolate Chip Cookie", "Chocolate chip cookies ",4, addToCart));
-        cookieTypeList.add(new dessertPage("Gingerbread Cookie", "Great for the holidays",4, addToCart));
-        cookieTypeList.add(new dessertPage("Snickerdoodle Cookie", "I don't even know but they sound good",4, addToCart));
+        cookieTypeList.add(new dessertPage("Oatmeal Raisin Cookie", "Oatmeal Raisin Cookie, the best kind",4));
+        cookieTypeList.add(new dessertPage("Chocolate Chip Cookie", "Chocolate chip cookies ",4));
+        cookieTypeList.add(new dessertPage("Gingerbread Cookie", "Great for the holidays",4));
+        cookieTypeList.add(new dessertPage("Snickerdoodle Cookie", "I don't even know but they sound good",4));
 
         fm = getActivity().getSupportFragmentManager();
 
