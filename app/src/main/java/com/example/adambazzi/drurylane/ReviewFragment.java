@@ -15,12 +15,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link picturesFragment.OnFragmentInteractionListener} interface
+ * {@link ReviewFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link picturesFragment#newInstance} factory method to
+ * Use the {@link ReviewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class picturesFragment extends Fragment {
+public class ReviewFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +32,7 @@ public class picturesFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public picturesFragment() {
+    public ReviewFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +42,11 @@ public class picturesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment picturesFragment.
+     * @return A new instance of fragment ReviewFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static picturesFragment newInstance(String param1, String param2) {
-        picturesFragment fragment = new picturesFragment();
+    public static ReviewFragment newInstance(String param1, String param2) {
+        ReviewFragment fragment = new ReviewFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,23 +67,33 @@ public class picturesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_pictures, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_review, container,false);
         CustomAdapter adapter;
         adapter = new CustomAdapter(getFragmentManager());
-        ViewPager viewpager = (ViewPager) view.findViewById(R.id.pictureViewPager);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.reviewViewPager);
+        viewPager.setAdapter(adapter);
 
         return view;
     }
 
-    public class CustomAdapter extends FragmentPagerAdapter{
+    public class CustomAdapter extends FragmentPagerAdapter {
+
         public CustomAdapter(FragmentManager fm){
             super(fm);
         }
+        //Position tells the program what framgnet we are currently on  /displaying
 
-
+        /**
+         * Step 5
+         * populate the new instance parameters
+         */
         public Fragment getItem(int position){
             switch (position){
+                case 0: return ReviewFragment.newInstance("The Cake was Delicious, would come again","- First Name Last Name");
+                case 1: return ReviewFragment.newInstance("The variety at the store is maybe 3 percent of the availability online","- First Name");
+                case 2: return ReviewFragment.newInstance("Some keycaps can cost up to $1000 due to rarity","- First Name");
+                case 3: return ReviewFragment.newInstance("Some keyboards have programmable controllers, this allows you to change the layout","- First Name");
+                default: return ReviewFragment.newInstance("RGB is a waste of money","- First Name");
 
             }
         }

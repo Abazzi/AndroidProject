@@ -2,13 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.adambazzi.drurylane.picturesFragment">
+    android:id="@+id/reviewFragment"
+    tools:context="com.example.adambazzi.drurylane.ReviewFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <android.support.v4.view.ViewPager
+        android:id="@+id/reviewViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/pictureViewPager"/>
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
