@@ -4,23 +4,21 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ReviewFragment.OnFragmentInteractionListener} interface
+ * {@link ReviewInformationFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ReviewFragment#newInstance} factory method to
+ * Use the {@link ReviewInformationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReviewFragment extends Fragment {
+public class ReviewInformationFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +30,7 @@ public class ReviewFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ReviewFragment() {
+    public ReviewInformationFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +40,11 @@ public class ReviewFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ReviewFragment.
+     * @return A new instance of fragment ReviewInformationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ReviewFragment newInstance(String param1, String param2) {
-        ReviewFragment fragment = new ReviewFragment();
+    public static ReviewInformationFragment newInstance(String param1, String param2) {
+        ReviewInformationFragment fragment = new ReviewInformationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,40 +65,19 @@ public class ReviewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_review, container,false);
-        CustomAdapter adapter = new CustomAdapter(getFragmentManager());
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.reviewViewPager);
-        viewPager.setAdapter(adapter);
+        View view = inflater.inflate(R.layout.fragment_review_information, container, false);
+        TextView reviewText = (TextView) view.findViewById(R.id.reviewText);
+        TextView customerText = (TextView) view.findViewById(R.id.customerText);
 
+        if (mParam1 != null){
+            reviewText.setText(mParam1);
+        }
+        if (mParam2 != null){
+            customerText.setText(mParam2);
+        }
         return view;
     }
 
-    public class CustomAdapter extends FragmentPagerAdapter {
-
-        public CustomAdapter(FragmentManager fm){
-            super(fm);
-        }
-        //Position tells the program what fragment we are currently on  /displaying
-
-        /**
-         * Step 5
-         * populate the new instance parameters
-         */
-        public Fragment getItem(int position){
-            switch (position){
-                case 0: return ReviewFragment.newInstance("The Cake was Delicious, would come again","- First Name Last Name");
-                case 1: return ReviewFragment.newInstance("The Oatmeal Rasin Cookies are better then my mom's","- First Name");
-                case 2: return ReviewFragment.newInstance("The Apple Fritter's are the best around","- First Name");
-                case 3: return ReviewFragment.newInstance("Service is great and the app is gorgeous ","- First Name");
-                default: return ReviewFragment.newInstance("Here are some Reviews","- Staff");
-
-            }
-        }
-
-        public int getCount(){
-            return 4;
-        }
-    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
