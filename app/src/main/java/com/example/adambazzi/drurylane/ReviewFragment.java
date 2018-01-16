@@ -88,11 +88,11 @@ public class ReviewFragment extends Fragment {
          */
         public Fragment getItem(int position){
             switch (position){
-                case 0: return ReviewFragment.newInstance("The Cake was Delicious, would come again","- First Name Last Name");
-                case 1: return ReviewFragment.newInstance("The Oatmeal Rasin Cookies are better then my mom's","- First Name");
-                case 2: return ReviewFragment.newInstance("The Apple Fritter's are the best around","- First Name");
-                case 3: return ReviewFragment.newInstance("Service is great and the app is gorgeous ","- First Name");
-                default: return ReviewFragment.newInstance("Here are some Reviews","- Staff");
+                case 0: return ReviewInformationFragment.newInstance("The Cake was Delicious, would come again","- First Name Last Name");
+                case 1: return ReviewInformationFragment.newInstance("The Oatmeal Rasin Cookies are better then my mom's","- First Name");
+                case 2: return ReviewInformationFragment.newInstance("The Apple Fritter's are the best around","- First Name");
+                case 3: return ReviewInformationFragment.newInstance("Service is great and the app is gorgeous ","- First Name");
+                default: return ReviewInformationFragment.newInstance("Here are some Reviews","- Staff");
 
             }
         }
