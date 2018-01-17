@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_gravity="center"
@@ -17,12 +18,17 @@
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="@string/cake"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookies"
+        app:layout_constraintVertical_bias="0.247" />
 
     <Button
         android:id="@+id/donuts"
@@ -30,11 +36,20 @@
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/cake"
-        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="@string/donuts"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cake"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pie"
+        app:layout_constraintVertical_bias="0.247" />
 
     <Button
         android:id="@+id/cookies"
@@ -42,11 +57,14 @@
         android:layout_height="80dp"
         android:layout_alignStart="@+id/cake"
         android:layout_below="@+id/cake"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/button"
         android:text="@string/cookies"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/pie"
@@ -54,8 +72,15 @@
         android:layout_height="80dp"
         android:layout_alignBottom="@+id/cookies"
         android:layout_alignStart="@+id/donuts"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/button"
         android:text="@string/pie"
         android:textColor="@color/white"
-        android:textSize="20sp" />
-</RelativeLayout>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/cookies"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
