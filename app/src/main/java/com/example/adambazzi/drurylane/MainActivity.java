@@ -3,6 +3,7 @@ package com.example.adambazzi.drurylane;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity
                     AboutFragment.OnFragmentInteractionListener,
                     CreditsFragment.OnFragmentInteractionListener,
                     ReviewFragment.OnFragmentInteractionListener,
-                    ReviewInformationFragment.OnFragmentInteractionListener{
+                    ReviewInformationFragment.OnFragmentInteractionListener,
+                    SocialFragment.OnFragmentInteractionListener{
 
         FragmentManager fm;
 
@@ -117,6 +119,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.reviews){
                 FragmentManager fm = getSupportFragmentManager();
                 transaction.replace(R.id.content, new ReviewFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }else if (id == R.id.social){
+                FragmentManager fm = getSupportFragmentManager();
+                transaction.replace(R.id.content, new SocialFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

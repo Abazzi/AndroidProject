@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="instagram_icon">&#xf16d;</string>
+    <string name="facebook_icon">&#xf09a;</string>
+    <string name="twitter_icon">&#xf099;</string>
+</resources>

@@ -18,6 +18,11 @@
             android:id="@+id/reviews"
             android:icon="@drawable/choco_vanilla"
             android:title="Reviews"/>
+        <item
+            android:id="@+id/social"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Social Media"
+            />
     </group>
 
     <item android:title="Communicate">
