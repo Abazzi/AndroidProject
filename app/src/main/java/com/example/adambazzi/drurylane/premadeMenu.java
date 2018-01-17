@@ -154,6 +154,8 @@ public class premadeMenu extends Fragment {
                     Integer itemQuantity = Integer.parseInt(quantity.getText().toString());
                     String item = selectedItem.getName();
                     Integer price = selectedItem.getPrice();
+                    Integer total = selectedItem.getPrice() * itemQuantity;
+                    String cartTotal = total.toString();
 //                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 //                            "mailto","info@durylane.ca", null));
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
@@ -166,7 +168,7 @@ public class premadeMenu extends Fragment {
                     }
                     String intentValue;
                     if (itemQuantity<2){
-                        intentValue = "Your order has " + itemQuantity+ " " + item + "for a total of " + "$" + (price * itemQuantity) ;
+                        intentValue = "Your order has " + itemQuantity+ " " + item + "for a total of " + "$" + (cartTotal) ;
                         emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                         if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                             startActivity(Intent.createChooser(emailIntent, "Send email..."));
@@ -175,7 +177,7 @@ public class premadeMenu extends Fragment {
                         Toast.makeText(getContext(),"please enter a valid quantity",Toast.LENGTH_LONG).show();
                     } else {
                             intentValue = "Your order has "  + itemQuantity+ " " + item + "'s" + " for the total price of "
-                                    + "$" +(price * itemQuantity) ;
+                                    + "$" +(cartTotal) ;
                             emailIntent.putExtra(Intent.EXTRA_TEXT, intentValue);
                             if (emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
                                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
