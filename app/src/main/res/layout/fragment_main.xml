@@ -1,31 +1,37 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/white"
     android:columnCount="4"
     android:rowCount="2"
     tools:context="com.example.adambazzi.drurylane.MainFragment"
-    android:layout_height="match_parent">
+    tools:layout_editor_absoluteY="25dp">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <Button
         android:id="@+id/cake"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
+        android:layout_width="128dp"
+        android:layout_height="81dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="@string/cake"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/cookies"
-        tools:layout_editor_absoluteX="194dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/donuts"
+        app:layout_constraintTop_toBottomOf="@+id/cookies" />
 
     <Button
         android:id="@+id/donuts"
@@ -33,14 +39,19 @@
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/cake"
-        android:layout_marginEnd="72dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="@string/donuts"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cake"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pie" />
 
     <Button
@@ -49,13 +60,17 @@
         android:layout_height="80dp"
         android:layout_alignStart="@+id/cake"
         android:layout_below="@+id/cake"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/button"
         android:text="@string/cookies"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="122dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pie"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/pie"
@@ -63,12 +78,15 @@
         android:layout_height="80dp"
         android:layout_alignBottom="@+id/cookies"
         android:layout_alignStart="@+id/donuts"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/button"
         android:text="@string/pie"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/cookies"
-        tools:layout_editor_absoluteY="122dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
