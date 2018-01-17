@@ -1,12 +1,14 @@
 package com.example.adambazzi.drurylane;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -64,7 +66,17 @@ public class SocialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_social, container, false);
+        View view = inflater.inflate(R.layout.fragment_social, container, false);
+
+        Button facebookButton = (Button) view.findViewById(R.id.facebookButton);
+        Button twitterButton= (Button) view.findViewById(R.id.twitterButton);
+        Button instagramButton= (Button) view.findViewById(R.id.instagramButton);
+
+        Typeface font = Typeface.createFromAsset( getContext().getAssets(), "fonts/fontawesome-webfont.ttf");
+        facebookButton.setTypeface(font);
+        twitterButton.setTypeface(font);
+        instagramButton.setTypeface(font);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
