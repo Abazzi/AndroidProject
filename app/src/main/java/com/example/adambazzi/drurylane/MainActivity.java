@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
                     createCakeFragment.OnFragmentInteractionListener,
                     AboutFragment.OnFragmentInteractionListener,
                     CreditsFragment.OnFragmentInteractionListener,
-                    SettingsFragment.OnFragmentInteractionListener{
+                    SettingsFragment.OnFragmentInteractionListener {
 
         FragmentManager fm;
         FragmentTransaction transaction;
