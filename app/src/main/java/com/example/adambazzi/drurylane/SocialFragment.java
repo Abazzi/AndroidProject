@@ -74,7 +74,7 @@ public class SocialFragment extends Fragment {
 
         Button facebookButton = (Button) view.findViewById(R.id.facebookButton);
         Button twitterButton= (Button) view.findViewById(R.id.twitterButton);
-        Button instagramButton= (Button) view.findViewById(R.id.instagramButton);
+        final Button instagramButton= (Button) view.findViewById(R.id.instagramButton);
 
         Typeface font = Typeface.createFromAsset( getContext().getAssets(), "fonts/fontawesome-webfont.ttf");
         facebookButton.setTypeface(font);
@@ -106,7 +106,7 @@ public class SocialFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(twitter));
+                intent.setData(Uri.parse(instagram));
                 startActivity(intent);
             }
         });
