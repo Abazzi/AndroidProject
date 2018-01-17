@@ -14,6 +14,15 @@
             android:id="@+id/about_us"
             android:icon="@drawable/ic_menu_send"
             android:title="About Us" />
+        <item
+            android:id="@+id/reviews"
+            android:icon="@drawable/choco_vanilla"
+            android:title="Reviews"/>
+        <item
+            android:id="@+id/social"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Social Media"
+            />
     </group>
 
     <item android:title="Communicate">

@@ -19,9 +19,14 @@ public class MainActivity extends AppCompatActivity
                     premadeMenu.OnFragmentInteractionListener,
                     createCakeFragment.OnFragmentInteractionListener,
                     AboutFragment.OnFragmentInteractionListener,
-                    CreditsFragment.OnFragmentInteractionListener {
+                    CreditsFragment.OnFragmentInteractionListener,
+                    ReviewFragment.OnFragmentInteractionListener,
+                    ReviewInformationFragment.OnFragmentInteractionListener,
+                    SocialFragment.OnFragmentInteractionListener,
+                    SettingsFragment.OnFragmentInteractionListener {
 
         FragmentManager fm;
+        FragmentTransaction transaction;
 
         private static final String TAG = "MainActivity";
         private static final int ERROR_DIALOG_REQUEST = 9001;
@@ -80,7 +85,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            transaction = fm.beginTransaction();
+            transaction.replace(R.id.content, new SettingsFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -92,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-            FragmentTransaction transaction = fm.beginTransaction();
+            transaction = fm.beginTransaction();
             transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
             if (id == R.id.custom_cake) {
             transaction.replace(R.id.content, new createCakeFragment());
@@ -107,16 +115,22 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content, new AboutFragment());
             transaction.addToBackStack(null);
             transaction.commit();
-
-        }
-
-        else if (id == R.id.credits) {
+        } else if (id == R.id.credits) {
             FragmentManager fm = getSupportFragmentManager();
             transaction.replace(R.id.content, new CreditsFragment());
             transaction.addToBackStack(null);
             transaction.commit();
-
-        }
+        } else if (id == R.id.reviews){
+                FragmentManager fm = getSupportFragmentManager();
+                transaction.replace(R.id.content, new ReviewFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }else if (id == R.id.social){
+                FragmentManager fm = getSupportFragmentManager();
+                transaction.replace(R.id.content, new SocialFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
