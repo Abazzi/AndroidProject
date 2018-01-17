@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity
                     premadeMenu.OnFragmentInteractionListener,
                     createCakeFragment.OnFragmentInteractionListener,
                     AboutFragment.OnFragmentInteractionListener,
-                    CreditsFragment.OnFragmentInteractionListener {
+                    CreditsFragment.OnFragmentInteractionListener,
+                    ReviewFragment.OnFragmentInteractionListener,
+                    ReviewInformationFragment.OnFragmentInteractionListener{
 
         FragmentManager fm;
 
@@ -107,16 +109,17 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content, new AboutFragment());
             transaction.addToBackStack(null);
             transaction.commit();
-
-        }
-
-        else if (id == R.id.credits) {
+        } else if (id == R.id.credits) {
             FragmentManager fm = getSupportFragmentManager();
             transaction.replace(R.id.content, new CreditsFragment());
             transaction.addToBackStack(null);
             transaction.commit();
-
-        }
+        } else if (id == R.id.reviews){
+                FragmentManager fm = getSupportFragmentManager();
+                transaction.replace(R.id.content, new ReviewFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
