@@ -70,3 +70,12 @@ With each commit comment the issue it is addressing `git commit -m "#4 this addr
 ![alt text](https://user-images.githubusercontent.com/8884041/33664354-4d116922-da61-11e7-8f90-bbb583483996.png)
 ![alt text](https://user-images.githubusercontent.com/8884041/33664354-4d116922-da61-11e7-8f90-bbb583483996.png)
 ![alt text](https://user-images.githubusercontent.com/8884041/33674053-7a6eace8-da7c-11e7-85ac-ed3b2bb04d4e.png)
+
+##Finished Application
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516163683.png)
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516229799.png)
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516229815.png)
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516229822.png)
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516229889.png)
+![alt text](https://github.com/Abazzi/AndroidProject/blob/staging/Screenshot_1516229894.png)
+

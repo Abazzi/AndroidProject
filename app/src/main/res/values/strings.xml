@@ -4,8 +4,38 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="customize_your_cake">Customize your cake</string>
+    <string name="chocolate_icing">Chocolate Icing</string>
+    <string name="vanilla_icing">Vanilla Icing</string>
+    <string name="orange">Orange</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="submit_order">Submit Order</string>
+    <string name="topping_choice">Topping Choice</string>
+    <string name="batter_choice">Batter Choice:</string>
+    <string name="vanilla">Vanilla</string>
+    <string name="todo">TODO</string>
+    <string name="how_many">How many?</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="cake">Cake</string>
+    <string name="donuts">Donuts</string>
+    <string name="cookies">Cookies</string>
+    <string name="pie">Pie</string>
+    <string name="text_size_extra_small">Extra small</string>
+    <string name="text_size_small">Small</string>
+    <string name="text_size_medium">Medium</string>
+    <string name="text_size_large">Large</string>
+    <string name="text_size_extra_large">Extra large</string>
+    <string name="pref_category_reading">Reading</string>
+    <string name="pref_text_size">pref_text_size</string>
+    <string name="pref_text_size_title">Font size</string>
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
 </resources>

@@ -15,21 +15,23 @@
             android:icon="@drawable/ic_menu_send"
             android:title="About Us" />
         <item
-            android:id="@+id/cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
-            android:title="Cart" />
+            android:id="@+id/reviews"
+            android:icon="@drawable/choco_vanilla"
+            android:title="Reviews"/>
+        <item
+            android:id="@+id/social"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Social Media"
+            />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/credits"
+                android:icon="@drawable/ic_assignment_black_24dp"
+                android:title="Credits" />
+
         </menu>
     </item>
 
